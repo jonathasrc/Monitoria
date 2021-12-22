@@ -1,25 +1,20 @@
 #!/usr/bin/env python
+import pdb
+
+def numero_perfeito(numero):
+
+    total = 0
+    for i in range(1, numero):
+        if numero % i == 0:
+            total += i
+    
+    if total == numero:
+        return True
+    else:
+        return False
 
 
-numero = int(input('Informe um numero: '))
-
-# init
-limit = numero // 2
-total = 0
-
-# retirar numero 0 e 1
-if numero != 0 and numero != 1:
-    total = 1 
-
-if numero % 2 == 0:
-    total += limit + 2
-
-for i in range(3, limit):
-    if numero % i == 0:
+for i in range(1, 500):
+    if numero_perfeito(i):
         print(i)
-        total +=  numero
 
-if numero == total:
-    print('perfeito')
-else:
-    print('nao perfeito')
